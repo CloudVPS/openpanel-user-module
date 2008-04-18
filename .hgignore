@@ -1,0 +1,11 @@
+syntax: glob
+usermodule.app
+usermodule
+*.o
+makeinclude
+platform.h
+ktrace.out
+configure.paths
+version.cpp
+version.id
+module.xml

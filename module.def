@@ -1,0 +1,184 @@
+# ============================================================================
+# OpenPanel User.module for user management
+# Copyright (C) 2008 PanelSix V.O.F.
+# ============================================================================
+module User						< uuid fc6dad57-379a-46b7-a4fb-82652fa55f75
+								< version 1.0
+								< languages en_EN
+								< apitype xml
+								< getconfig true
+	
+	quota User:Diskquota		: Disk quota < units MB
+							
+# ============================================================================
+# CLASSES
+# ============================================================================
+class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
+								< version 1
+								< indexing manual
+								< uniquein class
+								< shortname user
+								< title User
+								< description System/OpenPanel user
+								< sortindex 10
+								< icon user.png
+							
+								< capabilities create update delete
+								< listview id name_customer emailaddress
+								< required password name_customer emailaddress
+
+	string id					: Username			< example myname812
+	password password			: Password
+								< crypt md5
+								< regexp .*
+								
+	string name_customer		: Customer name
+	string name_company			: Company name 		< regexp [:company:]
+	string address_street		: Street 			< regexp [:address:]
+	string address_number		: House number 		< regexp [:numbers:]
+	string address_suffix		: Number suffix 	< regexp [:alnum:]
+	string address_zipcode		: Zipcode 			< regexp [:zipcode:]
+	string address_state		: State / Province	< regexp [:alnum:]
+	string address_city			: City				< regexp [:city:]
+	string address_country		: Country			< regexp [:country:]
+	enum language				: Language
+	string fax_country			: Fax country code	< regexp ^[+]?[0-9]+$
+	string fax_area				: Fax area code 	< regexp [1-9][0-9]+
+	string fax_number			: Fax number 		< regexp [:numbers:]
+	string website				: Website URL 		< regexp [:url:]
+	string emailaddress			: Email address		< regexp [:email:]
+	string telephone_country	: Phone country		< regexp ^[+]?[0-9]+$
+	string telephone_area		: Phone area 		< regexp [1-9][0-9]+
+	string telephone_number		: Phone number		< regexp [:numbers:]
+	string comment				: Comment
+
+
+# ----------------------------------------------------------------------------
+class OpenCORE:Quota			< uuid 34789832-e1bd-441d-9ffc-193c6364b9d7
+								< version 1
+								< requires User
+								< indexing manual
+								< uniquein parent
+								< shortname quota
+								< title Quota
+								< description Quota information
+								< sortindex 20
+								
+								< capabilities update
+	
+	string id					: Resource
+								< flags visible
+								< gridwidth 28
+								
+	string description			: Description
+								< flags visible
+								< gridwidth 41
+								
+	string units				: Unit 
+								< flags visible
+								< gridwidth 15
+								
+	integer usage				: Usage
+								< flags visible
+								< gridwidth 7
+								
+	integer quota				: Quota
+								< flags enabled visible
+								< gridwidth 7
+	
+
+# ----------------------------------------------------------------------------
+class OpenCORE:System			< uuid f5ab1775-56a3-42d2-9853-7fdc13709003
+								< version 1
+								< indexing manual
+								< singleton system
+								< shortname opencore
+								< title System
+								< description OpenCORE System Information
+								< sortindex 100
+								< icon system.png
+	
+	string id					: id < flags required
+	string version				: Build version < flags visible
+	string buildhost			: Build host < flags visible < clihide true
+	string builddate			: Build date < flags visible
+	string grace				: Grace library version < flags visible
+	
+								
+# ----------------------------------------------------------------------------
+class OpenCORE:ActiveSession	< uuid 37b77a2a-fe61-4d37-a604-ee003512111e
+								< version 1
+								< requires OpenCORE:System
+								< indexing auto
+								< shortname session
+								< title Sessions
+								< description Active opencore session
+								< sortindex 120
+								
+								< capabilities admin
+								
+	string id					: Session-id < gridwidth 40
+	string user					: User < gridwidth 15
+	string origin				: Origin < gridwidth 43
+
+
+# ----------------------------------------------------------------------------
+class OpenCORE:ErrorLog			< uuid a11a6b9d-78d1-4dc4-8c0a-9f6f25a24617
+								< version 1
+								< requires OpenCORE:System
+								< indexing auto
+								< shortname errorlog
+								< title Error Log
+								< description Server side error log
+								< sortindex 110
+								
+								< capabilities admin
+	
+	string id					: id < flags enabled
+	string time					: When < gridwidth 20
+	string subsystem			: Component < gridwidth 15
+	string message				: Message < gridwidth 63
+
+
+# ----------------------------------------------------------------------------
+class OpenCORE:ClassList		< uuid f1aa6d01-807a-43df-b650-1186a36a2ecf
+								< version 1
+								< requires OpenCORE:System
+								< indexing manual
+								< shortname classlist
+								< title Classes
+								< description Loaded OpenCORE classes
+								< sortindex 130
+								
+	string id					: Class
+								< cliwidth 16
+								< gridwidth 25
+								
+	string module				: Module
+								< cliwidth 20
+								< gridwidth 25
+								
+	string description			: Description < gridwidth 35
+	integer version				: Version
+								< clihide true
+								< gridwidth 13
+								
+	integer shortname			: Short (CLI) name
+								< clihide true
+								< gridhide true
+
+
+# ============================================================================
+# ENUMS
+# ============================================================================
+enum language
+	value en_EN 				: English
+	value nl_NL					: Nederlands
+	value fr_FR					: Francais
+	value de_DE					: Deutsch
+
+# ============================================================================
+# AUTHD
+# ============================================================================
+authd commands
+	commandclass user
