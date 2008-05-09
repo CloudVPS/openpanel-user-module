@@ -106,6 +106,21 @@ class OpenCORE:System			< uuid f5ab1775-56a3-42d2-9853-7fdc13709003
 	
 								
 # ----------------------------------------------------------------------------
+class OpenCORE:Prefs			< uuid f0323afe-4ca6-4625-a9a5-2c679cc44e9d
+								< version 1
+								< indexing manual
+								< singleton prefs
+								< shortname prefs
+								< title Preferences
+								< description System Preferences
+								< sortindex 250
+								< icon prefs.png
+								
+								< capabilities admin
+								
+	string id					: id < flags required
+
+# ----------------------------------------------------------------------------
 class OpenCORE:ActiveSession	< uuid 37b77a2a-fe61-4d37-a604-ee003512111e
 								< version 1
 								< requires OpenCORE:System

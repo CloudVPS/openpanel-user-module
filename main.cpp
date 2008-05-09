@@ -50,6 +50,13 @@ int userModule::main (void)
 							$("emailaddress", "openadmin@example.net")
 						 )
 					 ) ->
+					 $("OpenCORE:Prefs",
+					 	$attr("type","class") ->
+					 	$("prefs",
+					 		$attr("type","object") ->
+					 		$("id", "prefs")
+					 	 )
+					  ) ->
 					 $("OpenCORE:Result",
 					 	$("code", moderr::ok) ->
 					 	$("message", "OK")
