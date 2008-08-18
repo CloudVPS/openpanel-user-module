@@ -73,8 +73,8 @@ int userModule::main (void)
 	    foreach(quota, data["quota"])
 	    {
 	        authd.setquota(quota.label().sval(),
-	                       quota.ival(),
-                           quota.ival());
+	                       quota.ival() * 1024,
+                           quota.ival() * 1024);
 	    }
 	}
 	else if (data["OpenCORE:Session"]["classid"] == "User")
