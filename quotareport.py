@@ -39,4 +39,4 @@ for user in usage:
     print "user %s usage %d" % (user,usage[user])
     print uuid
     
-    c.updateobject(parentid=uuid, classid="OpenCORE:Quota", objectid="User/quota:usage", data=dict(quota=usage[user]))
+    c.updateobject(parentid=uuid, classid="OpenCORE:Quota", objectid="User/diskspace:usage", data=dict(usage=usage[user]))
