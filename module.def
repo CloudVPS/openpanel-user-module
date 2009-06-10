@@ -27,7 +27,9 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< listview id name_customer emailaddress
 								< required id password name_customer emailaddress
 
-	string id					: Username			< example myname812
+	string id					: Username
+								< example myname812
+								< regexp [:username:]
 	password password			: Password
 								< crypt md5
 								< regexp [:password:]
