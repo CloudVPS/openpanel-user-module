@@ -25,7 +25,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 							
 								< capabilities create update delete
 								< listview id name_customer emailaddress
-								< required password name_customer emailaddress
+								< required id password name_customer emailaddress
 
 	string id					: Username			< example myname812
 	password password			: Password
