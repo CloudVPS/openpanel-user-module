@@ -32,14 +32,14 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< regexp [:username:]
 	password password			: Password
 								< crypt md5
-								< textwidth 9
+								< textwidth 14
 								< regexp [:password:]
 								
 	string name_customer		: Customer name
 	string name_company			: Company name 		< regexp [:company:]
 	string address_street		: Street
 								< regexp [:address:]
-								< textwidth 20
+								< textwidth 24
 								
 	string address_number		: House number
 								< regexp [:numbers:]
@@ -48,6 +48,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 	string address_suffix		: Number suffix
 								< regexp [:alnum:]
 								< textwidth 12
+								< sameline true
 								
 	string address_zipcode		: Zipcode
 								< regexp [:zipcode:]
@@ -70,34 +71,39 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< regexp ^[+]?[0-9]+$
 								< textwidth 4
 								
-	string fax_area				: Fax area code
+	string fax_area				: Area
 								< regexp [1-9][0-9]+
 								< textwidth 5
+								< sameline true
 								
-	string fax_number			: Fax number
+	string fax_number			: Number
 								< regexp [:numbers:]
 								< textwidth 10
+								< sameline true
 								
 	string website				: Website URL 		< regexp [:url:]
 	
 	string emailaddress			: Email address
 								< regexp [:email:]
-								< textwidth 24
+								< textwidth 30
 								
 	string telephone_country	: Phone country	
 								< regexp ^[+]?[0-9]+$
 								< textwidth 4
 								
-	string telephone_area		: Phone area
+	string telephone_area		: Area
 								< regexp [1-9][0-9]+
 								< textwidth 5
+								< sameline true
 								
-	string telephone_number		: Phone number
+	string telephone_number		: Number
 								< regexp [:numbers:]
 								< textwidth 10
+								< sameline true
 								
 	textarea comment			: Comment
-								< textwidth 60
+								< textwidth 45
+								< rows 4
 
 
 # ----------------------------------------------------------------------------
