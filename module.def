@@ -32,27 +32,71 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< regexp [:username:]
 	password password			: Password
 								< crypt md5
+								< textwidth 90
 								< regexp [:password:]
 								
 	string name_customer		: Customer name
 	string name_company			: Company name 		< regexp [:company:]
-	string address_street		: Street 			< regexp [:address:]
-	string address_number		: House number 		< regexp [:numbers:]
-	string address_suffix		: Number suffix 	< regexp [:alnum:]
-	string address_zipcode		: Zipcode 			< regexp [:zipcode:]
-	string address_state		: State / Province	< regexp [:alnum:]
-	string address_city			: City				< regexp [:city:]
-	string address_country		: Country			< regexp [:country:]
+	string address_street		: Street
+								< regexp [:address:]
+								< textwidth 200
+								
+	string address_number		: House number
+								< regexp [:numbers:]
+								< textwidth 30
+								
+	string address_suffix		: Number suffix
+								< regexp [:alnum:]
+								< textwidth 120
+								
+	string address_zipcode		: Zipcode
+								< regexp [:zipcode:]
+								< textwidth 120
+								
+	string address_state		: State / Province
+								< regexp [:alnum:]
+								< textwidth 120
+								
+	string address_city			: City
+								< regexp [:city:]
+								< textwidth 180
+								
+	string address_country		: Country
+								< regexp [:country:]
+								< textwidth 150
+								
 	enum language				: Language
-	string fax_country			: Fax country code	< regexp ^[+]?[0-9]+$
-	string fax_area				: Fax area code 	< regexp [1-9][0-9]+
-	string fax_number			: Fax number 		< regexp [:numbers:]
+	string fax_country			: Fax country code
+								< regexp ^[+]?[0-9]+$
+								< textwidth 30
+								
+	string fax_area				: Fax area code
+								< regexp [1-9][0-9]+
+								< textwidth 50
+								
+	string fax_number			: Fax number
+								< regexp [:numbers:]
+								< textwidth 100
+								
 	string website				: Website URL 		< regexp [:url:]
-	string emailaddress			: Email address		< regexp [:email:]
-	string telephone_country	: Phone country		< regexp ^[+]?[0-9]+$
-	string telephone_area		: Phone area 		< regexp [1-9][0-9]+
-	string telephone_number		: Phone number		< regexp [:numbers:]
-	string comment				: Comment
+	
+	string emailaddress			: Email address
+								< regexp [:email:]
+								< textwidth 180
+								
+	string telephone_country	: Phone country	
+								< regexp ^[+]?[0-9]+$
+								< textwidth 30
+								
+	string telephone_area		: Phone area
+								< regexp [1-9][0-9]+
+								< textwidth 50
+								
+	string telephone_number		: Phone number
+								< regexp [:numbers:]
+								< textwidth 100
+								
+	textarea comment			: Comment
 
 
 # ----------------------------------------------------------------------------
