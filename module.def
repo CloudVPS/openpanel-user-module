@@ -191,7 +191,7 @@ class OpenCORE:Prefs			< uuid f0323afe-4ca6-4625-a9a5-2c679cc44e9d
 								< shortname prefs
 								< title Preferences
 								< description System Preferences
-								< sortindex 250
+								< sortindex 5
 								< icon prefs.png
 								
 								< capabilities admin update
