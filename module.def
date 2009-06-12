@@ -30,27 +30,37 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 	string id					: Username
 								< example myname812
 								< regexp [:username:]
+								
 	password password			: Password
 								< crypt md5
 								< textwidth 14
 								< regexp [:password:]
 								
 	string name_customer		: Customer name
-	string name_company			: Company name 		< regexp [:company:]
+								< example John Smith
+								
+	string name_company			: Company name 
+								< regexp [:company:]
+								< example Acme Inc.
+								
 	string address_street		: Street
+								< example Paper street
 								< regexp [:address:]
 								< textwidth 24
 								
 	string address_number		: House number
+								< example 145
 								< regexp [:numbers:]
 								< textwidth 4
 								
 	string address_suffix		: Number suffix
+								< example apt. 14
 								< regexp [:alnum:]
-								< textwidth 12
+								< textwidth 9
 								< sameline true
 								
 	string address_zipcode		: Zipcode
+								< example 2388
 								< regexp [:zipcode:]
 								< textwidth 12
 								
@@ -59,10 +69,12 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< textwidth 12
 								
 	string address_city			: City
+								< example Metropolis
 								< regexp [:city:]
 								< textwidth 18
 								
 	string address_country		: Country
+								< example United States
 								< regexp [:country:]
 								< textwidth 15
 								
@@ -70,36 +82,43 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 	string fax_country			: Fax country code
 								< regexp ^[+]?[0-9]+$
 								< textwidth 4
+								< example +1
 								
 	string fax_area				: Area
 								< regexp [1-9][0-9]+
 								< textwidth 5
 								< sameline true
+								< example 555
 								
 	string fax_number			: Number
 								< regexp [:numbers:]
 								< textwidth 10
 								< sameline true
+								< example 1231482
 								
 	string website				: Website URL 		< regexp [:url:]
 	
 	string emailaddress			: Email address
 								< regexp [:email:]
-								< textwidth 30
+								< textwidth 35
+								< example john@acme.example.net
 								
 	string telephone_country	: Phone country	
 								< regexp ^[+]?[0-9]+$
 								< textwidth 4
+								< example +1
 								
 	string telephone_area		: Area
 								< regexp [1-9][0-9]+
 								< textwidth 5
 								< sameline true
+								< example 555
 								
 	string telephone_number		: Number
 								< regexp [:numbers:]
 								< textwidth 10
 								< sameline true
+								< example 1382741
 								
 	textarea comment			: Comment
 								< textwidth 45
