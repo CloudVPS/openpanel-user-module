@@ -34,6 +34,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 	password password			: Password
 								< crypt md5
 								< textwidth 14
+								< example sPswd13t
 								< regexp [:password:]
 								
 	string name_customer		: Customer name
@@ -51,32 +52,34 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 	string address_number		: House number
 								< example 145
 								< regexp [:numbers:]
-								< textwidth 4
+								< textwidth 5
 								
 	string address_suffix		: Number suffix
 								< example apt. 14
 								< regexp [:alnum:]
-								< textwidth 9
+								< textwidth 7
 								< sameline true
 								
 	string address_zipcode		: Zipcode
 								< example 2388
 								< regexp [:zipcode:]
-								< textwidth 12
+								< textwidth 8
 								
 	string address_state		: State / Province
 								< regexp [:alnum:]
 								< textwidth 12
+								< sameline true
 								
 	string address_city			: City
 								< example Metropolis
 								< regexp [:city:]
-								< textwidth 18
+								< textwidth 17
 								
 	string address_country		: Country
 								< example United States
 								< regexp [:country:]
-								< textwidth 15
+								< textwidth 17
+								< sameline true
 								
 	enum language				: Language
 	string fax_country			: Fax country code
@@ -96,13 +99,6 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< sameline true
 								< example 1231482
 								
-	string website				: Website URL 		< regexp [:url:]
-	
-	string emailaddress			: Email address
-								< regexp [:email:]
-								< textwidth 35
-								< example john@acme.example.net
-								
 	string telephone_country	: Phone country	
 								< regexp ^[+]?[0-9]+$
 								< textwidth 4
@@ -119,6 +115,15 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< textwidth 10
 								< sameline true
 								< example 1382741
+								
+	string website				: Website URL
+								< regexp [:url:]
+								< textwidth 35
+	
+	string emailaddress			: Email address
+								< regexp [:email:]
+								< textwidth 35
+								< example john@acme.example.net
 								
 	textarea comment			: Comment
 								< textwidth 45
@@ -157,6 +162,7 @@ class OpenCORE:Quota			< uuid 34789832-e1bd-441d-9ffc-193c6364b9d7
 	integer quota				: Quota
 								< flags enabled visible
 								< gridwidth 7
+								< textwidth 3
 	
 
 # ----------------------------------------------------------------------------
