@@ -140,6 +140,15 @@ int userModule::main (void)
 			return 0;
 		}
 	}
+	else if (data["OpenCore:Session"]["classid"] == "System:Prefs")
+	{
+		data["System:Prefs"].savexml ("preferences.xml");
+		if (authd.installfile ("preferences.xml","/etc/openpanel"))
+		{
+			sendresult( err_authdaemon, makeauthderror("Error updating preferences"));
+			authd.rollback ();
+		}
+	}
 	else
 	{
 		// Error, unknown command found in request

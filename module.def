@@ -286,3 +286,9 @@ enum language
 # ============================================================================
 authd commandclasses
 	commandclass user
+
+authd fileops
+	match preferences.xml		: /etc/openpanel
+								< user root
+								< group opencore
+								< perms 0640
