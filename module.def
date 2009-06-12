@@ -194,9 +194,19 @@ class OpenCORE:Prefs			< uuid f0323afe-4ca6-4625-a9a5-2c679cc44e9d
 								< sortindex 250
 								< icon prefs.png
 								
-								< capabilities admin
+								< capabilities admin update
 								
 	string id					: id < flags required
+	
+	string mailcontact			: Contact E-mail
+								< example steve@example.com
+								< textwidth 30
+	
+	string smtphost				: SMTP Server
+								< example 127.0.0.1
+								< textwidth 16
+	
+	bool sendalerts				: Send SMTP alert messages
 
 # ----------------------------------------------------------------------------
 class OpenCORE:ActiveSession	< uuid 37b77a2a-fe61-4d37-a604-ee003512111e

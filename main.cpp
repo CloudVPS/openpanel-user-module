@@ -54,7 +54,10 @@ int userModule::main (void)
 					 	$attr("type","class") ->
 					 	$("prefs",
 					 		$attr("type","object") ->
-					 		$("id", "prefs")
+					 		$("id", "prefs") ->
+					 		$("mailcontact", "root@localhost") ->
+					 		$("smtphost", "127.0.0.1") ->
+					 		$("sendalerts", false)
 					 	 )
 					  ) ->
 					 $("OpenCORE:Result",
