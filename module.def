@@ -254,7 +254,7 @@ class OpenCORE:ClassList		< uuid f1aa6d01-807a-43df-b650-1186a36a2ecf
 	string description			: Description < gridwidth 35
 	integer version				: Version
 								< clihide true
-								< gridwidth 13
+								< gridwidth 8
 								
 	integer shortname			: Short (CLI) name
 								< clihide true
