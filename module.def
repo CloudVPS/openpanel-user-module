@@ -224,6 +224,7 @@ class OpenCORE:ErrorLog			< uuid a11a6b9d-78d1-4dc4-8c0a-9f6f25a24617
 								< title Error Log
 								< description Server side error log
 								< sortindex 110
+								< explanation errorlog.html
 								
 								< capabilities admin
 	
