@@ -38,6 +38,14 @@ int userModule::main (void)
 
 	if (data["OpenCORE:Command"] == "getconfig")
 	{
+		value prefs = $("mailcontact", "root@localhost") ->
+					  $("smtphost", "127.0.0.1") ->
+					  $("sendalerts", false);
+		
+		if (fs.exists ("/etc/openpanel/preferences.xml"))
+		{
+			prefs.loadxml ("/etc/openpanel/preferences.xml");
+		}
 		value ret = $type("opencore.module") ->
 					$("User",
 						$attr("type","class") ->
@@ -55,9 +63,7 @@ int userModule::main (void)
 					 	$("prefs",
 					 		$attr("type","object") ->
 					 		$("id", "prefs") ->
-					 		$("mailcontact", "root@localhost") ->
-					 		$("smtphost", "127.0.0.1") ->
-					 		$("sendalerts", false)
+					 		$merge(prefs)
 					 	 )
 					  ) ->
 					 $("OpenCORE:Result",
@@ -142,7 +148,12 @@ int userModule::main (void)
 	}
 	else if (data["OpenCore:Session"]["classid"] == "OpenCORE:Prefs")
 	{
-		data["OpenCORE:Prefs"].savexml ("/var/opencore/conf/staging/User/preferences.xml");
+		value prefs = data["OpenCORE:Prefs"];
+		prefs.rmval ("uuid");
+		prefs.rmval ("version");
+		prefs.rmval ("id");
+		prefs.rmval ("metaid");
+		prefs.savexml ("/var/opencore/conf/staging/User/preferences.xml");
 		if (authd.installfile ("preferences.xml","/etc/openpanel"))
 		{
 			sendresult( err_authdaemon, makeauthderror("Error updating preferences"));
