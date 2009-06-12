@@ -142,7 +142,7 @@ int userModule::main (void)
 	}
 	else if (data["OpenCore:Session"]["classid"] == "OpenCORE:Prefs")
 	{
-		data["OpenCORE:Prefs"].savexml ("preferences.xml");
+		data["OpenCORE:Prefs"].savexml ("/var/opencore/conf/staging/User/preferences.xml");
 		if (authd.installfile ("preferences.xml","/etc/openpanel"))
 		{
 			sendresult( err_authdaemon, makeauthderror("Error updating preferences"));
