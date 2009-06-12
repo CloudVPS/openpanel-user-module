@@ -185,7 +185,7 @@ class OpenCORE:System			< uuid f5ab1775-56a3-42d2-9853-7fdc13709003
 								
 # ----------------------------------------------------------------------------
 class OpenCORE:Prefs			< uuid f0323afe-4ca6-4625-a9a5-2c679cc44e9d
-								< version 1
+								< version 2
 								< indexing manual
 								< singleton prefs
 								< shortname prefs
