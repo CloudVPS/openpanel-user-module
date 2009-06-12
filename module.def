@@ -145,7 +145,7 @@ class OpenCORE:Quota			< uuid 34789832-e1bd-441d-9ffc-193c6364b9d7
 	
 	string id					: Resource
 								< flags visible
-								< gridwidth 28
+								< gridhide true
 								
 	string description			: Description
 								< flags visible
@@ -153,7 +153,7 @@ class OpenCORE:Quota			< uuid 34789832-e1bd-441d-9ffc-193c6364b9d7
 								
 	string units				: Unit 
 								< flags visible
-								< gridwidth 15
+								< gridwidth 13
 								
 	integer usage				: Usage
 								< flags visible
