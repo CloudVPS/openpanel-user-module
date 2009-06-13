@@ -39,6 +39,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								
 	string name_customer		: Customer name
 								< example John Smith
+								< paddingtop 10
 								
 	string name_company			: Company name 
 								< regexp [:company:]
@@ -48,6 +49,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< example Paper street
 								< regexp [:address:]
 								< textwidth 24
+								< paddingtop 10
 								
 	string address_number		: House number
 								< example 145
@@ -82,10 +84,13 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< sameline true
 								
 	enum language				: Language
+								< paddingtop 10
+	
 	string fax_country			: Fax country code
 								< regexp ^[+]?[0-9]+$
 								< textwidth 4
 								< example +1
+								< paddingtop 10
 								
 	string fax_area				: Area
 								< regexp [1-9][0-9]+
@@ -119,6 +124,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 	string website				: Website URL
 								< regexp [:url:]
 								< textwidth 35
+								< paddingtop 10
 	
 	string emailaddress			: Email address
 								< regexp [:email:]
