@@ -40,15 +40,17 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 	string name_customer		: Customer name
 								< example John Smith
 								< paddingtop 5
+								< textwidth 45
 								
 	string name_company			: Company name 
 								< regexp [:company:]
 								< example Acme Inc.
+								< textwidth 45
 								
 	string address_street		: Street
 								< example Paper street
 								< regexp [:address:]
-								< textwidth 24
+								< textwidth 45
 								< paddingtop 5
 								
 	string address_number		: House number
