@@ -61,7 +61,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< regexp [:alnum:]
 								< textwidth 7
 								< sameline true
-								< labelwidth 220
+								< labelwidth 243
 								
 	string address_zipcode		: Zipcode
 								< example 2388
@@ -72,7 +72,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< regexp [:alnum:]
 								< textwidth 12
 								< sameline true
-								< labelwidth 187
+								< labelwidth 181
 								
 	string address_city			: City
 								< example Metropolis
@@ -84,7 +84,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< regexp [:country:]
 								< textwidth 17
 								< sameline true
-								< labelwidth 75
+								< labelwidth 73
 								
 	enum language				: Language
 								< paddingtop 5
