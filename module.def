@@ -91,7 +91,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 	enum language				: Language
 								< paddingtop 5
 	
-	string fax_country			: Fax country code
+	string fax_country			: Fax
 								< regexp ^[+]?[0-9]+$
 								< textwidth 4
 								< example +1
@@ -102,29 +102,33 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< textwidth 5
 								< sameline true
 								< example 555
+								< hidelabel true
 								
 	string fax_number			: Number
 								< regexp [:numbers:]
 								< textwidth 10
 								< sameline true
 								< example 1231482
+								< hidelabel true
 								
-	string telephone_country	: Phone country	
+	string telephone_country	: Phone	
 								< regexp ^[+]?[0-9]+$
 								< textwidth 4
 								< example +1
 								
 	string telephone_area		: Area
-								< regexp [1-9][0-9]+
+								< regexp [1-9][0-9]*
 								< textwidth 5
 								< sameline true
 								< example 555
+								< hidelabel true
 								
 	string telephone_number		: Number
 								< regexp [:numbers:]
 								< textwidth 10
 								< sameline true
 								< example 1382741
+								< hidelabel true
 								
 	string website				: Website URL
 								< regexp [:url:]
