@@ -39,7 +39,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								
 	string name_customer		: Customer name
 								< example John Smith
-								< paddingtop 13
+								< paddingtop 5
 								
 	string name_company			: Company name 
 								< regexp [:company:]
@@ -49,7 +49,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< example Paper street
 								< regexp [:address:]
 								< textwidth 24
-								< paddingtop 13
+								< paddingtop 5
 								
 	string address_number		: House number
 								< example 145
@@ -61,6 +61,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< regexp [:alnum:]
 								< textwidth 7
 								< sameline true
+								< labelwidth 155
 								
 	string address_zipcode		: Zipcode
 								< example 2388
@@ -71,7 +72,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< regexp [:alnum:]
 								< textwidth 12
 								< sameline true
-								< labelwidth 155
+								< labelwidth 162
 								
 	string address_city			: City
 								< example Metropolis
@@ -85,13 +86,13 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< sameline true
 								
 	enum language				: Language
-								< paddingtop 13
+								< paddingtop 5
 	
 	string fax_country			: Fax country code
 								< regexp ^[+]?[0-9]+$
 								< textwidth 4
 								< example +1
-								< paddingtop 13
+								< paddingtop 5
 								
 	string fax_area				: Area
 								< regexp [1-9][0-9]+
@@ -124,12 +125,12 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								
 	string website				: Website URL
 								< regexp [:url:]
-								< textwidth 35
-								< paddingtop 13
+								< textwidth 45
+								< paddingtop 12
 	
 	string emailaddress			: Email address
 								< regexp [:email:]
-								< textwidth 35
+								< textwidth 45
 								< example john@acme.example.net
 								
 	textarea comment			: Comment
