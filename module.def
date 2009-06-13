@@ -108,6 +108,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< textwidth 4
 								< example +1
 								< sameline true
+								< labelwidth 85
 								
 	string fax_number			: Number
 								< regexp ^[1-9][0-9]*[-]?[0-9]*$
