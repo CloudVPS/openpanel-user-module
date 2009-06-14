@@ -273,9 +273,20 @@ class OpenCORE:ClassList		< uuid f1aa6d01-807a-43df-b650-1186a36a2ecf
 								< gridwidth 8
 	
 	string apitype				: API Type
+								< clihide true
+								< gridhide true
+								
 	string license				: License
+								< clidehide true
+								< gridhide true
+								
 	string author				: Author
+								< clihide true
+								< gridhide true
+								
 	string url					: Site
+								< clihide true
+								< gridhide true
 								
 	integer shortname			: Short (CLI) name
 								< clihide true
