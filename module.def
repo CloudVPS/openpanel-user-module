@@ -277,7 +277,7 @@ class OpenCORE:ClassList		< uuid f1aa6d01-807a-43df-b650-1186a36a2ecf
 								< gridhide true
 								
 	string license				: License
-								< clidehide true
+								< clihide true
 								< gridhide true
 								
 	string author				: Author
