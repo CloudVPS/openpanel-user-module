@@ -46,13 +46,11 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< textwidth 45
 								
 	string name_company			: Company name 
-								< regexp [:company:]
 								< example Acme Inc.
 								< textwidth 45
 								
 	string address_street		: Street
 								< example Paper street
-								< regexp [:address:]
 								< textwidth 45
 								< paddingtop 5
 								
@@ -71,17 +69,16 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 	string address_zipcode		: Zipcode
 								< example 2388
 								< regexp [:zipcode:]
-								< textwidth 8
+								< textwidth 10
 								
 	string address_state		: State / Province
 								< regexp [:alnum:]
 								< textwidth 12
 								< sameline true
-								< labelwidth 181
+								< labelwidth 166
 								
 	string address_city			: City
 								< example Metropolis
-								< regexp [:city:]
 								< textwidth 17
 								
 	string address_country		: Country
@@ -96,22 +93,22 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 	
 	string telephone_country	: Phone	
 								< regexp ^[+]?[0-9]+$
-								< textwidth 4
+								< textwidth 6
 								< example +1
 								
 	string telephone_number		: Number
 								< regexp ^[1-9][0-9]*[-]?[0-9]*$
-								< textwidth 10
+								< textwidth 12
 								< sameline true
 								< example 555-1483
 								< hidelabel true
 								
 	string fax_country			: Fax
 								< regexp ^[+]?[0-9]+$
-								< textwidth 4
+								< textwidth 6
 								< example +1
 								< sameline true
-								< labelwidth 83
+								< labelwidth 37
 								
 	string fax_number			: Number
 								< regexp ^[1-9][0-9]*[-]?[0-9]*$
