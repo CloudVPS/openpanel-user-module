@@ -2,7 +2,7 @@ include makeinclude
 
 OBJ	= main.o version.o
 
-all: module.xml usermodule.exe down_prefs.png down_system.png
+all: module.xml usermodule.exe down_prefs.png down_system.png down_user.png
 	mkapp usermodule 
 
 down_prefs.png: prefs.png
@@ -10,6 +10,9 @@ down_prefs.png: prefs.png
 
 down_system.png: system.png
 	convert -modulate 50,100,100 system.png down_system.png
+
+down_user.png: user.png
+	convert -modulate 50,100,100 user.png down_user.png
 
 module.xml: module.def
 	mkmodulexml < module.def > module.xml
