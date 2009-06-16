@@ -221,6 +221,7 @@ class OpenCORE:ActiveSession	< uuid 37b77a2a-fe61-4d37-a604-ee003512111e
 								< description Active opencore session
 								< sortindex 120
 								< gridheight 150
+								< emptytext No active sessions
 								
 								< capabilities admin
 								
@@ -240,6 +241,7 @@ class OpenCORE:ErrorLog			< uuid a11a6b9d-78d1-4dc4-8c0a-9f6f25a24617
 								< sortindex 110
 								< gridheight 275
 								< explanation errorlog.html
+								< emptytext No errors.
 								
 								< capabilities admin
 	
