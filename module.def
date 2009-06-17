@@ -38,7 +38,6 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 	password password			: Password
 								< crypt md5
 								< textwidth 16
-								< sameline true
 								< example sPswd13t
 								< regexp [:password:]
 								
@@ -88,7 +87,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< regexp [:country:]
 								< textwidth 17
 								< sameline true
-								< labelwidth 73
+								< labelwidth 74
 								
 	enum language				: Language
 								< paddingtop 5
@@ -110,7 +109,7 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< textwidth 6
 								< example +1
 								< sameline true
-								< labelwidth 37
+								< labelwidth 35
 								
 	string fax_number			: Number
 								< regexp ^[1-9][0-9]*[-]?[0-9]*$
