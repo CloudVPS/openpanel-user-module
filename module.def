@@ -205,10 +205,12 @@ class OpenCORE:Prefs			< uuid f0323afe-4ca6-4625-a9a5-2c679cc44e9d
 	string mailcontact			: Contact E-mail
 								< example steve@example.com
 								< textwidth 30
+								< regexp [:email:]
 	
 	string smtphost				: SMTP Server
 								< example 127.0.0.1
 								< textwidth 16
+								< regexp [:emailorhostname:]
 	
 	bool sendalerts				: Send SMTP alert messages
 
