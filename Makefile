@@ -3,7 +3,7 @@ include makeinclude
 OBJ	= main.o version.o
 
 all: module.xml usermodule.exe down_prefs.png down_system.png down_user.png
-	mkapp usermodule 
+	grace mkapp usermodule 
 
 down_prefs.png: prefs.png
 	convert -modulate 50,100,100 prefs.png down_prefs.png
@@ -18,7 +18,7 @@ module.xml: module.def
 	mkmodulexml < module.def > module.xml
 
 version.cpp:
-	mkversion version.cpp
+	grace mkversion version.cpp
 
 usermodule.exe: $(OBJ)
 	$(LD) $(LDFLAGS) -o usermodule.exe $(OBJ) $(LIBS)  \
