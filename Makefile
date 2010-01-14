@@ -22,7 +22,7 @@ version.cpp:
 
 usermodule.exe: $(OBJ)
 	$(LD) $(LDFLAGS) -o usermodule.exe $(OBJ) $(LIBS)  \
-	../opencore/api/c++/lib/libcoremodule.a
+	/usr/lib/opencore/libcoremodule.a
 
 clean:
 	rm -f *.o *.exe

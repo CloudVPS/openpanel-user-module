@@ -14,7 +14,7 @@
 #ifndef _userModule_H
 #define _userModule_H 1
 
-#include <moduleapp.h>
+#include <opencore/moduleapp.h>
 #include <grace/system.h>
 #include <grace/configdb.h>
 

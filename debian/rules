@@ -3,17 +3,17 @@
 
 BUILD_ROOT=$(CURDIR)/debian/tmp
 install:
-trm -rf ${BUILD_ROOT}
-tmkdir -p ${BUILD_ROOT}/var/opencore/modules/User.module
-tcp -rf ./usermodule.app ${BUILD_ROOT}/var/opencore/modules/User.module/
-tln -sf usermodule.app/exec ${BUILD_ROOT}/var/opencore/modules/User.module/action
-tcp module.xml ${BUILD_ROOT}/var/opencore/modules/User.module/module.xml
-tcp *.png ${BUILD_ROOT}/var/opencore/modules/User.module/
-tinstall -m 755 verify ${BUILD_ROOT}/var/opencore/modules/User.module/verify
+	rm -rf ${BUILD_ROOT}
+	mkdir -p ${BUILD_ROOT}/var/opencore/modules/User.module
+	cp -rf ./usermodule.app ${BUILD_ROOT}/var/opencore/modules/User.module/
+	ln -sf usermodule.app/exec ${BUILD_ROOT}/var/opencore/modules/User.module/action
+	cp module.xml ${BUILD_ROOT}/var/opencore/modules/User.module/module.xml
+	cp *.png ${BUILD_ROOT}/var/opencore/modules/User.module/
+	install -m 755 verify ${BUILD_ROOT}/var/opencore/modules/User.module/verify
 
 build:
-t./configure
-tmake
+	./configure
+	make
 binary-indep:
 
 binary-arch binary: build install
