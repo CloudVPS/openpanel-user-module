@@ -54,7 +54,6 @@ int userModule::main (void)
 							$("id", "openadmin") ->
 							$("password", "*") ->
 							$("name_customer", "Administrator") ->
-							$("language", "en_EN") ->
 							$("emailaddress", "openadmin@example.net")
 						 )
 					 ) ->
