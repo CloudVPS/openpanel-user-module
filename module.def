@@ -77,9 +77,6 @@ class User						< uuid d6001920-2ae4-45ff-9dfb-cf1bdb2ef329
 								< sameline true
 								< labelwidth 74
 								
-	enum language				: Language
-								< paddingtop 5
-	
 	string telephone_country	: Phone	
 								< regexp ^[+]?[0-9]+$
 								< textwidth 6
