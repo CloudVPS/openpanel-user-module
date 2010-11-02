@@ -2,7 +2,7 @@ Source: openpanel-mod-user
 Section: misc
 Priority: optional
 Maintainer: OpenPanel/Panel6 packager <packages@panelsix.com>
-Build-Depends: debhelper (>= 5), openpanel-mkmodulexml, openpanel-devel, imagemagick
+Build-Depends: debhelper (>= 5), openpanel-mkmodulexml, openpanel-dev, imagemagick
 Standards-Version: 3.7.2
 
 Package: openpanel-mod-user
