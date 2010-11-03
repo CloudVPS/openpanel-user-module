@@ -8,5 +8,5 @@ Standards-Version: 3.7.2
 Package: openpanel-mod-user
 Architecture: any
 Depends: openpanel-core (>= 0.8.3)
-Description: User management module
+Description: OpenPanel module to manage users
  Openpanel user management module
