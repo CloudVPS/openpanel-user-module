@@ -1,12 +1,12 @@
 Source: openpanel-mod-user
 Section: misc
 Priority: optional
-Maintainer: OpenPanel packager <packages@openpanel.com
+Maintainer: OpenPanel packager <packages@openpanel.com>
 Build-Depends: debhelper (>= 5), openpanel-dev, imagemagick
 Standards-Version: 3.7.2
 
 Package: openpanel-mod-user
 Architecture: any
-Depends: openpanel-core (>= 0.8.3)
+Depends: openpanel-core (>= 0.8.3), ${shlibs:Depends}, ${misc:Depends}
 Description: OpenPanel module to manage users
  Openpanel user management module
