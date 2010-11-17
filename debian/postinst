@@ -16,6 +16,8 @@
 
 set -e
 
+. /usr/share/debconf/confmodule
+
 # summary of how this script can be called:
 #        * <postinst> `configure' <most-recently-configured-version>
 #        * <old-postinst> `abort-upgrade' <new version>
@@ -30,9 +32,22 @@ set -e
 
 case "$1" in
     configure)
-mkdir -p /var/opencore/conf/staging/User
-chown opencore:authd /var/opencore/conf/staging/User
+        mkdir -p /var/opencore/conf/staging/User
+        chown opencore:authd /var/opencore/conf/staging/User
 
+        db_get openpanel-mod-user/root_password
+        if [ -n "$RET" ]; then
+
+            invoke-rc.d openpanel-authd status || invoke-rc.d openpanel-authd start
+            invoke-rc.d openpanel-core  status || invoke-rc.d openpanel-core  start
+
+
+            opencli "update user openadmin password=\"$RET\"" > /dev/null
+
+            # clean up the password, so we don't leak it through debconf
+            db_set openpanel-core/root_password ""
+            db_set openpanel-core/root_password_again ""
+        fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

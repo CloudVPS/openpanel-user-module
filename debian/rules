@@ -28,6 +28,7 @@ binary-indep:
 binary-arch binary: build install
 	if [ -d debian/tmp ] ; then dh_install -a --sourcedir=debian/tmp ; fi
 	dh_installdocs -a
+	dh_installdebconf -a
 	dh_installdeb -a
 	dh_compress -a
 	dh_fixperms -a
