@@ -60,7 +60,7 @@ case "$1" in
 esac
 
 
-db_stop # in case invoke fails
+#KvdV db_stop # in case invoke fails
 
 
 # dh_installdeb will replace this with shell code automatically
