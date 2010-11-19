@@ -16,7 +16,7 @@
 
 set -e
 
-#KvdV . /usr/share/debconf/confmodule
+. /usr/share/debconf/confmodule
 
 # summary of how this script can be called:
 #        * <postinst> `configure' <most-recently-configured-version>
@@ -38,15 +38,15 @@ case "$1" in
         invoke-rc.d openpanel-authd status || invoke-rc.d openpanel-authd start
         invoke-rc.d openpanel-core reload
 
-        #KvdV db_get openpanel-mod-user/root_password
-        #KvdV if [ -n "$RET" ]; then
-        #KvdV
-        #KvdV     opencli "update user openadmin password=\"$RET\"" > /dev/null
-        #KvdV
-        #KvdV     # clean up the password, so we don't leak it through debconf
-        #KvdV     db_set openpanel-mod-user/root_password ""
-        #KvdV     db_set openpanel-mod-user/root_password_again ""
-        #KvdV fi
+        db_get openpanel-mod-user/root_password
+        if [ -n "$RET" ]; then
+        
+             opencli "update user openadmin password=\"$RET\"" > /dev/null
+        
+             # clean up the password, so we don't leak it through debconf
+             db_set openpanel-mod-user/root_password ""
+             db_set openpanel-mod-user/root_password_again ""
+        fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
@@ -60,7 +60,7 @@ case "$1" in
 esac
 
 
-#KvdV db_stop # in case invoke fails
+db_stop # in case invoke fails
 
 
 # dh_installdeb will replace this with shell code automatically
