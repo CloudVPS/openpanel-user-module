@@ -7,7 +7,7 @@
 // restrictions. For more information, please visit the Legal Information 
 // section of the OpenPanel website on http://www.openpanel.com/
 
-#include <opencore/moduleapp.h>
+#include <openpanel-core/moduleapp.h>
 #include "userModule.h"
 
 #include <grace/file.h>
@@ -148,7 +148,7 @@ int userModule::main (void)
 		prefs.rmval ("version");
 		prefs.rmval ("id");
 		prefs.rmval ("metaid");
-		prefs.savexml ("/var/opencore/conf/staging/User/preferences.xml");
+		prefs.savexml ("/var/openpanel/conf/staging/User/preferences.xml");
 		if (authd.installfile ("preferences.xml","/etc/openpanel"))
 		{
 			sendresult( err_authdaemon, makeauthderror("Error updating preferences"));

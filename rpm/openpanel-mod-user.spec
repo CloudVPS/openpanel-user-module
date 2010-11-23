@@ -41,16 +41,16 @@ make
 %install
 BUILD_ROOT=$RPM_BUILD_ROOT
 rm -rf ${BUILD_ROOT}
-mkdir -p ${BUILD_ROOT}/var/opencore/modules/User.module
-cp -rf ./usermodule.app ${BUILD_ROOT}/var/opencore/modules/User.module/
-ln -sf usermodule.app/exec ${BUILD_ROOT}/var/opencore/modules/User.module/action
-cp module.xml ${BUILD_ROOT}/var/opencore/modules/User.module/module.xml
-cp *.png ${BUILD_ROOT}/var/opencore/modules/User.module/
-install -m 755 verify ${BUILD_ROOT}/var/opencore/modules/User.module/verify
+mkdir -p ${BUILD_ROOT}/var/openpanel/modules/User.module
+cp -rf ./usermodule.app ${BUILD_ROOT}/var/openpanel/modules/User.module/
+ln -sf usermodule.app/exec ${BUILD_ROOT}/var/openpanel/modules/User.module/action
+cp module.xml ${BUILD_ROOT}/var/openpanel/modules/User.module/module.xml
+cp *.png ${BUILD_ROOT}/var/openpanel/modules/User.module/
+install -m 755 verify ${BUILD_ROOT}/var/openpanel/modules/User.module/verify
 
 %post
-mkdir -p /var/opencore/conf/staging/User
-chown opencore:authd /var/opencore/conf/staging/User
+mkdir -p /var/openpanel/conf/staging/User
+chown openpanel-core:openpanel-authd /var/openpanel/conf/staging/User
 
 %files
 %defattr(-,root,root)

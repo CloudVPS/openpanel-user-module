@@ -31,7 +31,16 @@ version.cpp:
 
 usermodule.exe: $(OBJ)
 	$(LD) $(LDFLAGS) -o usermodule.exe $(OBJ) $(LIBS)  \
-	/usr/lib/opencore/libcoremodule.a
+	/usr/lib/openpanel-core/libcoremodule.a
+
+install:
+	mkdir -p ${DESTDIR}/var/openpanel/modules/User.module
+	mkdir -p ${DESTDIR}/var/openpanel/conf/staging/User
+	cp -rf ./usermodule.app    ${DESTDIR}/var/openpanel/modules/User.module/
+	ln -sf usermodule.app/exec ${DESTDIR}/var/openpanel/modules/User.module/action
+	cp     module.xml          ${DESTDIR}/var/openpanel/modules/User.module/module.xml
+	cp     *.png               ${DESTDIR}/var/openpanel/modules/User.module/
+	install -m 755 verify      ${DESTDIR}/var/openpanel/modules/User.module/verify
 
 clean:
 	rm -f *.o *.exe
@@ -40,4 +49,4 @@ clean:
 
 SUFFIXES: .cpp .o
 .cpp.o:
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -I../opencore/api/c++/include -c -g $<
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c -g $<
