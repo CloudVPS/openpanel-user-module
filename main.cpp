@@ -45,12 +45,12 @@ int userModule::main (void)
 		value ret = $type("opencore.module") ->
 					$("User",
 						$attr("type","class") ->
-						$("openadmin",
+						$("openpanel-admin",
 							$attr("type","object") ->
-							$("id", "openadmin") ->
+							$("id", "openpanel-admin") ->
 							$("password", "*") ->
 							$("name_customer", "Administrator") ->
-							$("emailaddress", "openadmin@example.net")
+							$("emailaddress", "openpanel-admin@example.net")
 						 )
 					 ) ->
 					 $("OpenCORE:Prefs",
