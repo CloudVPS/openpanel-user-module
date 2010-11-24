@@ -1,6 +1,5 @@
 Template: openpanel-mod-user/root_password
 Type: password
-Default: *
 Description: Please enter a password for the openpanel root user
  The OpenPanel root user (openadmin) has a password which is independent of the
  root user's password.
@@ -10,7 +9,6 @@ Description: Please enter a password for the openpanel root user
 
 Template: openpanel-mod-user/root_password_again
 Type: password
-Default: *
 Description: Please repeat the password for the openpanel root user
  The OpenPanel root user (openadmin) has a password which is independent of the
  root user's password.
@@ -22,4 +20,11 @@ Template: openpanel-mod-user/password_mismatch
 Type: error
 Description: Password mismatch
  The two passwords you entered were not the same. Please try again.
+
+Template: openpanel-mod-user/password_too_short
+Type: error
+Description: Password too short
+ The password you enterred was too short. Please enter at least 4 characters, or leave the 
+ password empty to disallow password-based logins for the openadmin user. You can change 
+ the password manually by running "opencli update user openadmin password=S3cr1t" as root.
 

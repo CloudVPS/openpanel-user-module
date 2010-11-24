@@ -40,9 +40,8 @@ case "$1" in
 
         db_get openpanel-mod-user/root_password
         if [ -n "$RET" ]; then
-        
-             opencli "update user openadmin password=\"$RET\"" > /dev/null
-        
+             opencli "update user openadmin password=\"$RET\"" > /dev/null || true
+
              # clean up the password, so we don't leak it through debconf
              db_set openpanel-mod-user/root_password ""
              db_set openpanel-mod-user/root_password_again ""
