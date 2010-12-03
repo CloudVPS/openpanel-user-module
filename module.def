@@ -226,7 +226,7 @@ class OpenCORE:Wallpaper		< uuid 70ae0843-ba29-48bd-b6f5-9784f4cc38f1
 								
 	string id					: Name < gridwidth 20
 	string description			: Description < gridwidth 40
-	image img					: Image < gridhide true
+	image preview				: Preview < gridhide true
 	bool active					: Use < gridwidth 8
 	
 # ----------------------------------------------------------------------------
