@@ -207,6 +207,27 @@ class OpenCORE:Prefs			< uuid f0323afe-4ca6-4625-a9a5-2c679cc44e9d
 	
 	bool sendalerts				: Send SMTP alert messages
 
+
+# ----------------------------------------------------------------------------
+class OpenCORE:Wallpaper		< uuid 70ae0843-ba29-48bd-b6f5-9784f4cc38f1
+								< version 1
+								< indexing manual
+								< uniquein parent
+								< dynamic true
+								< shortname wallpaper
+								< title Wallpaper
+								< description GUI Wallpaper
+								< sortindex 300
+								< emptytext No wallpapers available
+								< requires OpenCORE:Prefs
+								
+								< capabilities admin update
+								< required active
+								
+	string id					: Name 
+	string description			: Description 
+	bool active					: Use
+	
 # ----------------------------------------------------------------------------
 class OpenCORE:ActiveSession	< uuid 37b77a2a-fe61-4d37-a604-ee003512111e
 								< version 1
