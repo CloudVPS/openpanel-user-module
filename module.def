@@ -224,9 +224,9 @@ class OpenCORE:Wallpaper		< uuid 70ae0843-ba29-48bd-b6f5-9784f4cc38f1
 								< capabilities admin update
 								< required active
 								
-	string id					: Name 
-	string description			: Description 
-	bool active					: Use
+	string id					: Name < gridwidth 20
+	string description			: Description < gridwidth 40
+	bool active					: Use < gridwidth 8
 	
 # ----------------------------------------------------------------------------
 class OpenCORE:ActiveSession	< uuid 37b77a2a-fe61-4d37-a604-ee003512111e
@@ -331,5 +331,5 @@ authd commandclasses
 authd fileops
 	match preferences.xml		: /etc/openpanel
 								< user root
-								< group opencore
+								< group openpanel-core
 								< perms 0640
