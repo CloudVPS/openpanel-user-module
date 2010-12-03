@@ -2,5 +2,3 @@ cxx
 grace
 pthread
 libsocket
-libcrypt
-libdl
