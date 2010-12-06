@@ -5,7 +5,7 @@ Description: Please enter a password for the openpanel root user
  root user's password.
  .
  If this field is left blank, the password will not be changed. You can change 
- the password manually by running "opencli update user openpanel-admin password=S3cr1t"
+ the password manually by running "openpane-cli update user openpanel-admin password=S3cr1t"
 
 Template: openpanel-mod-user/root_password_again
 Type: password
