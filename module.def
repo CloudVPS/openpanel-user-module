@@ -220,6 +220,7 @@ class OpenCORE:Wallpaper		< uuid 70ae0843-ba29-48bd-b6f5-9784f4cc38f1
 								< sortindex 300
 								< emptytext No wallpapers available
 								< requires OpenCORE:Prefs
+								< gridheight 250
 								
 								< capabilities admin update
 								< required active
