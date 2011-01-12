@@ -13,7 +13,7 @@
 module User						< uuid fc6dad57-379a-46b7-a4fb-82652fa55f75
 								< version 1.0
 								< languages en_EN
-								< apitype xml
+								< apitype grace
 								< getconfig true
 								< license GPLv3
 								< author OpenPanel
