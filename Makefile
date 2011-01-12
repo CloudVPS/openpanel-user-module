@@ -39,6 +39,7 @@ install:
 	cp -rf ./usermodule.app    ${DESTDIR}/var/openpanel/modules/User.module/
 	ln -sf usermodule.app/exec ${DESTDIR}/var/openpanel/modules/User.module/action
 	cp     module.xml          ${DESTDIR}/var/openpanel/modules/User.module/module.xml
+	cp     errorlog.html       ${DESTDIR}/var/openpanel/modules/User.module/errorlog.html
 	cp     *.png               ${DESTDIR}/var/openpanel/modules/User.module/
 	install -m 755 verify      ${DESTDIR}/var/openpanel/modules/User.module/verify
 
