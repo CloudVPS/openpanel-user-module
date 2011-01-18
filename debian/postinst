@@ -34,16 +34,26 @@ case "$1" in
     configure)
         chown openpanel-core:openpanel-authd /var/openpanel/conf/staging/User
 
-        invoke-rc.d openpanel-authd status || invoke-rc.d openpanel-authd start
-        invoke-rc.d openpanel-core reload
-
         db_get openpanel-mod-user/root_password
         if [ -n "$RET" ]; then
-             openpanel-cli "update user openpanel-admin password=\"$RET\"" > /dev/null || true
+            TASKFILE="/var/openpanel/taskqueue/99_change_openadmin_pass"
+            echo "#!/bin/sh" > $TASKFILE
+            echo 'echo \"$(date) Changing password for openpanel-admin from postinst\" >> /var/openpanel/log/openpanel-mod-user.log' > $TASKFILE
+            echo "/usr/bin/openpanel-cli 'update user openpanel-admin password=\"$RET\"' 2>&1 >> /dev/null" >> $TASKFILE
+            chmod 700 "$TASKFILE"
+            
+            cp $TASKFILE /tmp/
 
-             # clean up the password, so we don't leak it through debconf
-             db_set openpanel-mod-user/root_password ""
-             db_set openpanel-mod-user/root_password_again ""
+            # clean up the password, so we don't leak it through debconf
+            db_set openpanel-mod-user/root_password ""
+            db_set openpanel-mod-user/root_password_again ""
+            
+            if [ -z "$DPKG_MAINTSCRIPT_PACKAGE" ]; then
+                invoke-rc.d openpanel-core reload
+            else
+                dpkg-trigger /var/openpanel/modules
+            fi
+
         fi
     ;;
 
