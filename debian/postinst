@@ -38,7 +38,7 @@ case "$1" in
         if [ -n "$RET" ]; then
             TASKFILE="/var/openpanel/taskqueue/99_change_openadmin_pass"
             echo "#!/bin/sh" > $TASKFILE
-            echo 'echo \"$(date) Changing password for openpanel-admin from postinst\" >> /var/openpanel/log/openpanel-mod-user.log' > $TASKFILE
+            echo 'echo "$(date) Changing password for openpanel-admin from postinst" >> /var/openpanel/log/openpanel-mod-user.log' >> $TASKFILE
             echo "/usr/bin/openpanel-cli 'update user openpanel-admin password=\"$RET\"' 2>&1 >> /dev/null" >> $TASKFILE
             chmod 700 "$TASKFILE"
             
@@ -54,7 +54,10 @@ case "$1" in
                 dpkg-trigger /var/openpanel/modules
             fi
 
-        fi
+	else
+		echo "$(date) no password from db_get, aborting..." >> /var/openpanel/log/openpanel-mod-user.log
+	fi
+	
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
