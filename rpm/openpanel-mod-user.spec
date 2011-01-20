@@ -10,6 +10,7 @@ Source: 	%{name}-%{version}.tar.bz2
 Requires:	openpanel-core
 BuildRequires:	openpanel-core-devel
 BuildRequires: 	ImageMagick
+BuildRequires: 	grace-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 %description
@@ -34,7 +35,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %dir %attr(-,openpanel-core, openpanel-authd) %{_localstatedir}/openpanel/conf/staging/%{modname}
-%{_localstatedir}/openpanel/modules/%{modname}.module
+%attr(-,openpanel-core, openpanel-authd) %{_localstatedir}/openpanel/modules/%{modname}.module
 
 %post
 /sbin/service openpaneld condrestart /dev/null 2>&1

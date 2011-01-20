@@ -42,6 +42,7 @@ install:
 	cp     errorlog.html       ${DESTDIR}/var/openpanel/modules/User.module/errorlog.html
 	cp     *.png               ${DESTDIR}/var/openpanel/modules/User.module/
 	install -m 755 verify      ${DESTDIR}/var/openpanel/modules/User.module/verify
+	cp *.html ${DESTDIR}/var/openpanel/modules/User.module
 
 clean:
 	rm -f *.o *.exe
