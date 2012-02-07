@@ -148,6 +148,7 @@ int userModule::main (void)
 		prefs.rmval ("version");
 		prefs.rmval ("id");
 		prefs.rmval ("metaid");
+		prefs.rmval ("owner-metaid");
 		prefs.savexml ("/var/openpanel/conf/staging/User/preferences.xml");
 		if (authd.installfile ("preferences.xml","/etc/openpanel"))
 		{
