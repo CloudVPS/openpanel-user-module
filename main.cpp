@@ -76,7 +76,7 @@ int userModule::main (void)
 	{
 	    foreach(quota, data["quota"])
 	    {
-	        if (! authd.setquota(quota.label().sval(),
+	        if (authd.setquota(quota.label().sval(),
 								 quota.ival() * 1024,
 								 quota.ival() * 1024))
 			{
