@@ -76,9 +76,14 @@ int userModule::main (void)
 	{
 	    foreach(quota, data["quota"])
 	    {
-	        authd.setquota(quota.label().sval(),
-	                       quota.ival() * 1024,
-                           quota.ival() * 1024);
+	        if (! authd.setquota(quota.label().sval(),
+								 quota.ival() * 1024,
+								 quota.ival() * 1024))
+			{
+				sendresult (err_authdaemon, makeauthderror("Error setting quota"));
+				authd.rollback();
+				return 0;
+			}
 	    }
 	}
 	else if (data["OpenCORE:Session"]["classid"] == "User")
